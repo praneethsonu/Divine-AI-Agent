@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 100% 98%;
+    --foreground: 36 30% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 36 30% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 36 30% 20%;
+
+    --primary: 36 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 42 100% 95%;
+    --secondary-foreground: 30 30% 20%;
+
+    --muted: 42 50% 95%;
+    --muted-foreground: 36 10% 40%;
+
+    --accent: 36 100% 92%;
+    --accent-foreground: 36 30% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 30% 90%;
+    --input: 36 30% 90%;
+    --ring: 36 30% 40%;
+
+    --radius: 0.75rem;
+
+    /* Saffron color palette */
+    --saffron-50: 36 100% 97%;
+    --saffron-100: 36 100% 94%;
+    --saffron-200: 36 100% 89%;
+    --saffron-300: 36 100% 65%;
+    --saffron-400: 36 98% 60%;
+    --saffron-500: 30 98% 50%;
+    --saffron-700: 25 90% 40%;
+    --saffron-900: 20 80% 30%;
+    --saffron-500-rgb: 255, 153, 51;
+    
+    /* Golden color palette */
+    --golden-50: 45 100% 97%;
+    --golden-100: 45 100% 94%;
+    --golden-300: 45 90% 65%;
+    --golden-500: 45 90% 50%;
+    --golden-700: 40 90% 40%;
+    --golden-900: 36 80% 30%;
+    
+    /* Scripture-specific themes */
+    --gita-light: 30 100% 85%;
+    --gita-medium: 30 90% 60%;
+    --gita-dark: 25 80% 40%;
+    --gita-rgb: 217, 128, 38;
+    
+    --bible-light: 220 80% 85%;
+    --bible-medium: 220 70% 60%;
+    --bible-dark: 220 60% 40%;
+    --bible-rgb: 57, 108, 184;
+    
+    --quran-light: 110 60% 85%;
+    --quran-medium: 110 50% 60%;
+    --quran-dark: 110 45% 35%;
+    --quran-rgb: 66, 158, 64;
+    
+    /* Divine color scheme - now using saffron and gold */
+    --divine-50: 36 100% 97%;
+    --divine-100: 36 100% 94%;
+    --divine-200: 36 100% 85%;
+    --divine-300: 36 100% 75%;
+    --divine-400: 36 90% 65%;
+    --divine-500: 36 90% 55%;
+    --divine-600: 36 85% 45%;
+    --divine-700: 36 80% 40%;
+    --divine-800: 36 70% 30%;
+    --divine-900: 36 60% 25%;
+    
+    /* RGB values for box shadows */
+    --divine-500-rgb: 230, 150, 50;
+    
+    /* Sidebar */
+    --sidebar-background: 45 100% 98%;
+    --sidebar-foreground: 36 30% 20%;
+    --sidebar-primary: 36 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 36 100% 92%;
+    --sidebar-accent-foreground: 36 30% 20%;
+    --sidebar-border: 36 30% 90%;
+    --sidebar-ring: 36 30% 40%;
+  }
+
+  .dark {
+    --background: 36 25% 8%;
+    --foreground: 36 10% 95%;
+
+    --card: 36 25% 10%;
+    --card-foreground: 36 10% 95%;
+
+    --popover: 36 25% 10%;
+    --popover-foreground: 36 10% 95%;
+
+    --primary: 36 90% 55%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 36 20% 18%;
+    --secondary-foreground: 36 10% 95%;
+
+    --muted: 36 20% 18%;
+    --muted-foreground: 36 10% 65%;
+
+    --accent: 36 25% 25%;
+    --accent-foreground: 36 10% 95%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 36 10% 95%;
+
+    --border: 36 20% 18%;
+    --input: 36 20% 18%;
+    --ring: 36 70% 60%;
+    
+    /* Saffron color palette - dark mode */
+    --saffron-50: 36 30% 18%;
+    --saffron-100: 36 35% 25%;
+    --saffron-200: 36 38% 30%;
+    --saffron-300: 36 50% 40%;
+    --saffron-400: 36 65% 50%;
+    --saffron-500: 30 80% 50%;
+    --saffron-700: 25 90% 65%;
+    --saffron-900: 20 100% 80%;
+    --saffron-500-rgb: 255, 140, 25;
+    
+    /* Golden color palette - dark mode */
+    --golden-50: 45 30% 18%;
+    --golden-100: 45 35% 25%;
+    --golden-300: 45 50% 40%;
+    --golden-500: 45 80% 50%;
+    --golden-700: 40 90% 65%;
+    --golden-900: 36 100% 80%;
+    
+    /* Scripture-specific themes - dark mode */
+    --gita-light: 30 60% 40%;
+    --gita-medium: 30 70% 55%;
+    --gita-dark: 25 80% 70%;
+    --gita-rgb: 217, 128, 38;
+    
+    --bible-light: 220 40% 40%;
+    --bible-medium: 220 50% 55%;
+    --bible-dark: 220 60% 70%;
+    --bible-rgb: 57, 108, 184;
+    
+    --quran-light: 110 30% 40%;
+    --quran-medium: 110 40% 55%;
+    --quran-dark: 110 50% 70%;
+    --quran-rgb: 66, 158, 64;
+    
+    /* Divine color scheme - dark mode */
+    --divine-50: 36 25% 15%;
+    --divine-100: 36 25% 20%;
+    --divine-200: 36 30% 25%;
+    --divine-300: 36 40% 30%;
+    --divine-400: 36 50% 45%;
+    --divine-500: 36 60% 55%;
+    --divine-600: 36 70% 65%;
+    --divine-700: 36 80% 75%;
+    --divine-800: 36 90% 85%;
+    --divine-900: 36 100% 95%;
+    
+    /* RGB values for box shadows */
+    --divine-500-rgb: 230, 140, 40;
+    
+    /* Sidebar */
+    --sidebar-background: 36 25% 10%;
+    --sidebar-foreground: 36 10% 95%;
+    --sidebar-primary: 36 70% 60%;
+    --sidebar-primary-foreground: 36 10% 10%;
+    --sidebar-accent: 36 25% 25%;
+    --sidebar-accent-foreground: 36 10% 95%;
+    --sidebar-border: 36 20% 18%;
+    --sidebar-ring: 36 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    @apply font-body;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-divine font-medium tracking-wide;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .divine-card {
+    @apply bg-white/90 dark:bg-divine-50/30 backdrop-blur-md rounded-2xl 
+           shadow-divine-md border border-saffron-100/50 dark:border-saffron-300/20 
+           overflow-hidden transition-all duration-500;
+  }
+  
+  .divine-card-hover {
+    @apply hover:shadow-divine-lg hover:translate-y-[-5px] hover:border-saffron-200/70 
+           dark:hover:border-saffron-300/30 transition-all duration-300;
+  }
+  
+  .divine-input {
+    @apply bg-white/60 dark:bg-divine-50/20 border-saffron-200/50 dark:border-saffron-300/30 
+           rounded-xl px-4 py-3 focus:ring-2 focus:ring-saffron-400/40 focus:border-saffron-300
+           placeholder:text-saffron-400/50 transition-all duration-300;
+  }
+  
+  .divine-button {
+    @apply bg-gradient-divine text-white font-medium px-6 py-3 rounded-xl
+           shadow-divine-sm hover:shadow-divine-md transition-all duration-300
+           focus:ring-2 focus:ring-saffron-400/40 active:scale-[0.98];
+  }
+  
+  .divine-button-subtle {
+    @apply bg-saffron-100 dark:bg-saffron-100/10 text-saffron-700 dark:text-saffron-400
+           hover:bg-saffron-200 dark:hover:bg-saffron-100/20 px-5 py-2.5 rounded-xl
+           transition-all duration-300;
+  }
+  
+  .divine-glass {
+    @apply bg-white/30 dark:bg-divine-900/10 backdrop-blur-md border border-white/40 
+           dark:border-divine-700/20 rounded-3xl shadow-divine-sm;
+  }
+  
+  .sacred-text-block {
+    @apply my-6 px-6 py-5 bg-divine-50/50 dark:bg-divine-100/10 border-l-4 
+           border-divine-400 dark:border-divine-500 rounded-r-lg italic;
+  }
+  
+  .gita-text-block {
+    @apply my-6 px-6 py-5 bg-gita-light/30 dark:bg-gita-light/10 border-l-4 
+           border-gita-medium dark:border-gita-medium rounded-r-lg italic;
+  }
+  
+  .bible-text-block {
+    @apply my-6 px-6 py-5 bg-bible-light/30 dark:bg-bible-light/10 border-l-4 
+           border-bible-medium dark:border-bible-medium rounded-r-lg italic;
+  }
+  
+  .quran-text-block {
+    @apply my-6 px-6 py-5 bg-quran-light/30 dark:bg-quran-light/10 border-l-4 
+           border-quran-medium dark:border-quran-medium rounded-r-lg italic;
+  }
+  
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-divine;
+  }
+  
+  .text-gradient-gold {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-golden-500 to-golden-700;
+  }
+  
+  .text-gradient-gita {
+    @apply text-transparent bg-clip-text bg-gradient-gita;
+  }
+  
+  .text-gradient-bible {
+    @apply text-transparent bg-clip-text bg-gradient-bible;
+  }
+  
+  .text-gradient-quran {
+    @apply text-transparent bg-clip-text bg-gradient-quran;
+  }
+  
+  .divine-icon {
+    @apply text-saffron-500 dark:text-saffron-400;
+  }
+  
+  .divine-shimmer {
+    @apply bg-gradient-to-r from-transparent via-white/20 to-transparent
+           bg-[length:200%_100%] animate-background-shine;
+  }
+  
+  .page-transition-enter {
+    @apply transform translate-x-full;
+  }
+  
+  .page-transition-enter-active {
+    @apply transform translate-x-0 transition-transform duration-300 ease-out;
+  }
+  
+  .page-transition-exit {
+    @apply transform translate-x-0;
+  }
+  
+  .page-transition-exit-active {
+    @apply transform -translate-x-full transition-transform duration-300 ease-in;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-divine-50 dark:bg-divine-100/5 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-divine-300 dark:bg-divine-500 rounded-full hover:bg-divine-400 dark:hover:bg-divine-600 transition-colors;
+}
+
+/* Animations and transitions */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Special effects for divine elements */
+.divine-glow {
+  box-shadow: 0 0 15px rgba(var(--divine-500-rgb), 0.2), 
+              0 0 30px rgba(var(--divine-500-rgb), 0.1);
+}
+
+.divine-glow-text {
+  text-shadow: 0 0 10px rgba(var(--divine-500-rgb), 0.3);
+}
+
+.divine-transition {
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glass morphism effect */
+.glassmorphism {
+  @apply bg-white/20 dark:bg-divine-900/20 backdrop-blur-[20px] 
+         border border-white/30 dark:border-divine-700/20 shadow-divine-sm;
+}
+
+/* Background patterns */
+.divine-pattern {
+  background-image: radial-gradient(rgba(var(--divine-500-rgb), 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.divine-pattern-1 {
+  background: linear-gradient(135deg, rgba(var(--saffron-500-rgb), 0.02) 0%, rgba(var(--golden-500-rgb), 0.03) 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.divine-pattern-2 {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(var(--gita-rgb), 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(var(--bible-rgb), 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(var(--quran-rgb), 0.03) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: subtle-shift 20s ease infinite;
+}
+
+.divine-pattern-3 {
+  background-image: 
+    linear-gradient(45deg, rgba(var(--divine-500-rgb), 0.01) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(var(--divine-500-rgb), 0.01) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(var(--divine-500-rgb), 0.01) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(var(--divine-500-rgb), 0.01) 75%);
+  background-size: 60px 60px;
+  animation: pattern-shift 30s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes subtle-shift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes pattern-shift {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 60px 60px; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-10px) translateX(5px); }
+  50% { transform: translateY(0) translateX(10px); }
+  75% { transform: translateY(10px) translateX(5px); }
+}
+
+.animate-float {
+  animation: float 15s ease-in-out infinite;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
